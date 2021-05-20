@@ -9,11 +9,27 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const partnerSchema = new Schema({
-    name: String,
-    image: String,
-    featured: Boolean,
-    description: String,
-})
+    name: {
+        type: String,
+        required: true,
+    },
+    image: {
+        type: String,
+        required: true,
+    },
+    featured: {
+        type: Boolean,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    },
+    {
+        timestamps: true,
+    }
+)
 
 const Partner = mongoose.model('Partner', partnerSchema)
 
